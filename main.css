@@ -2,9 +2,10 @@ body {
     line-height: 1.6;
     background-color: #0c0c0c;
     overflow: hidden;
+    animation: twinkling 5s infinite;
 }
 
-a { color: #fff; }
+a{ color: #fff; }
 
 .link-content {
     max-width: auto;
@@ -18,8 +19,6 @@ a { color: #fff; }
 }
 
 .text-content {
-    position: relative;
-    z-index: 10;
     max-width: auto;
     display: flex;
     flex-direction: column;
@@ -40,32 +39,15 @@ a { color: #fff; }
     z-index: 5;
 }
 
-#stars-container {
-    pointer-events: none; 
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
 
 .star {
+    z-index: 1;
     position: absolute;
     width: 2px;
     height: 2px;
-    background: white;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    background-color: #fff;
     border-radius: 50%;
-    opacity: 0.8;
-}
-
-.link-content a {
-    transition: filter 0.3s ease-in-out
-}
-
-.link-content a:hover {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); 
+    animation: twinkle 1s infinite;
 }
 
 @keyframes twinkling {
@@ -74,15 +56,6 @@ a { color: #fff; }
 }
 
 @keyframes twinkle {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.9; } 
-}
-
-@keyframes move {
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(100vw, 0); /* Adjust this value for the desired horizontal movement */
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
 }
